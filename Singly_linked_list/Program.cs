@@ -16,7 +16,11 @@ namespace Singly_linked_list
 
     class list
     {
-
+        nude START;
+        public List()
+        {
+            START = null;
+        }
     }
     class Program
     {
