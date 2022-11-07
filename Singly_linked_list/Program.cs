@@ -89,6 +89,26 @@ namespace Singly_linked_list
             else
                 return true;
         }
+        public void  Traverse()
+        {
+            if(listEmpty())
+                Console.WriteLine("\nThe records in the list are: ");
+            else
+            {
+                Console.WriteLine("\nThe records in the list are: ");
+                node currenntNode;
+                for (currenntNode = START; currenntNode != null; currenntNode = currenntNode.next)
+                    Console.Write(currenntNode.rollNumber + "" + currenntNode.name + "\n");
+                Console.WriteLine();
+            }
+        }
+        public bool listEmpty()
+        {
+            if (START == null)
+                return true;
+            else
+                return false;
+        }
 
         
     }
