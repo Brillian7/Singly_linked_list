@@ -13,6 +13,11 @@ namespace Singly_linked_list
         public string name;
         public nude next;
     }
+
+    class list
+    {
+
+    }
     class Program
     {
         static void Main(string[] args)
