@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,7 +37,7 @@ namespace Singly_linked_list
             //if the node to be inserted is the first node
             if ((START == null || rollNo <= START.rollNumber))
             {
-                if((START != null) && (rollNo == START.rollNumber))
+                if ((START != null) && (rollNo == START.rollNumber))
                 {
                     Console.WriteLine();
                     return;
@@ -50,16 +51,46 @@ namespace Singly_linked_list
             previous = START;
             current = START;
 
+            while ((current != null) && (rollNo >= current.rollNumber))
+            {
+                if (rollNo == current.rollNumber)
+                {
+                    Console.WriteLine();
+                    return;
+                }
+
+                previous.next = current;
+                previous.next = newnode;
+            }
+        }
+        public bool delNode(int rollNo)
+        {
+            node previous, current;
+            previous = current = null;
+            if (search(rollNo, ref previous, ref current) == false)
+                return false;
+            previous.next = current.next;
+            if (current == START)
+                START = START.next;
+            return true;
+        }
+
+        public bool search(int rollNo, ref node previous, ref node current)
+        {
+            previous = START;
+            current = START;
             while((current != null) && (rollNo >= current.rollNumber))
             {
-                if(rollNo == current.rollNumber)
-                {
-
-                }
+                previous = current;
+                current = current.next;
             }
-            
-
+            if (current == null)
+                return false;
+            else
+                return true;
         }
+
+        
     }
     class Program
     {
