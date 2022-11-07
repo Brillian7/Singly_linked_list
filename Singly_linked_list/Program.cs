@@ -19,5 +19,9 @@ namespace Singly_linked_list
     class list
     {
         node START;
+        public list()
+        {
+            START = null;
+        }
     }
 }
