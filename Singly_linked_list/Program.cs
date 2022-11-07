@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,6 +44,18 @@ namespace Singly_linked_list
                 newnode.next = START;
                 START = newnode;
                 return;
+            }
+
+            node previous, current;
+            previous = START;
+            current = START;
+
+            while((current != null) && (rollNo >= current.rollNumber))
+            {
+                if(rollNo == current.rollNumber)
+                {
+
+                }
             }
             
 
