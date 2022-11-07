@@ -21,6 +21,12 @@ namespace Singly_linked_list
         {
             START = null;
         }
+        public void addNote()
+        {
+            int rollNo;
+            string nm;
+            Console.Write();
+        }
     }
     class Program
     {
