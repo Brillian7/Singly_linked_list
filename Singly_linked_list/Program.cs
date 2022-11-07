@@ -16,4 +16,8 @@ namespace Singly_linked_list
         public node next;
     }
 
+    class list
+    {
+        node START;
+    }
 }
